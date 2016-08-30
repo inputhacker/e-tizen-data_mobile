@@ -155,4 +155,5 @@ group "E_Config" struct {
   value "comp_canvas_bg.b" uchar: 0;
   value "comp_canvas_bg.a" uchar: 255;
   value "comp_canvas_bg.opmode" int: 0;
+  value "use_buffer_flush" int: 1;
 }
