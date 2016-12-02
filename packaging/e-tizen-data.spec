@@ -46,7 +46,7 @@ cp -a %{_builddir}/%{buildsubdir}/COPYING %{buildroot}/%{TZ_SYS_RO_SHARE}/licens
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts
-%__cp -afr data/scripts/winsys_upgrade.sh %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts
+%__cp -afr data/scripts/winsys_upgrade.sh %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts/500.winsys_upgrade.sh
 %__cp -afr default/config/*.cfg          %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config
 %__cp -afr default/config/tizen-mobile/*.cfg %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-mobile
 %__cp -afr default/backgrounds/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
@@ -99,7 +99,7 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %{TZ_SYS_RO_SHARE}/enlightenment/data/themes/*.edj
 %{TZ_SYS_RO_SHARE}/enlightenment/data/config/*.cfg
 %{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-mobile/*.cfg
-%{TZ_SYS_RO_SHARE}/upgrade/scripts/winsys_upgrade.sh
+%{TZ_SYS_RO_SHARE}/upgrade/scripts/500.winsys_upgrade.sh
 %{_unitdir}/display-manager.service
 %{_unitdir_user}/enlightenment-user.service
 %config %{_sysconfdir}/sysconfig/enlightenment
