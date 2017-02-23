@@ -1,7 +1,7 @@
 %define alias e-tizen-data
 
 Name:          e-tizen-data-profile_mobile
-Version:       0.3.23
+Version:       0.3.24
 Release:       0
 Provides:      e-tizen-data = %{version}-%{release}
 BuildArch:     noarch
