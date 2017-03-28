@@ -92,7 +92,7 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %files
 %manifest %{alias}.manifest
 %defattr(-,root,root,-)
-%{TZ_SYS_RO_SHARE}/license/%{alias}
+%license COPYING
 %{TZ_SYS_RO_SHARE}/enlightenment/data
 %{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds/*.edj
 %{TZ_SYS_RO_SHARE}/enlightenment/data/themes/*.edj
