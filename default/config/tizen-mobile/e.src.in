@@ -170,4 +170,5 @@ group "E_Config" struct {
   value "indicator_plug_name" string: "elm_indicator";
   value "save_win_buffer" int: 1;
   value "launchscreen_without_timer" uchar: 1;
+  value "rsm_buffer_release_mode" int: 1;
 }
