@@ -42,11 +42,13 @@ rm -rf %{buildroot}
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts
+%__mkdir_p %{buildroot}/%{_sysconfdir}/dbus-1/system.d
 %__cp -afr data/scripts/winsys_upgrade.sh %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts/500.winsys_upgrade.sh
 %__cp -afr default/config/*.cfg          %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config
 %__cp -afr default/config/tizen-mobile/*.cfg %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-mobile
 %__cp -afr default/backgrounds/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__cp -afr default/themes/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
+%__cp -afr data/dbus/org.enlightenment.wm.conf %{buildroot}/%{_sysconfdir}/dbus-1/system.d
 
 %define daemon_user display
 %define daemon_group display
@@ -100,3 +102,4 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %{_unitdir_user}/enlightenment-user.service
 %config %{_sysconfdir}/sysconfig/enlightenment
 %config %{_sysconfdir}/profile.d/enlightenment.sh
+%{_sysconfdir}/dbus-1/system.d/org.enlightenment.wm.conf
