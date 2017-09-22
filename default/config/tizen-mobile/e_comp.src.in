@@ -227,6 +227,7 @@ group "Comp_Config" struct {
     value "effect_style" string: "zoom";
     value "depth_in_style" string: "fade";
     value "bg_effect_style" string: "background-zoom";
+    value "kbd_effect_style" string: "keyboard-easeout";
     value "engine" int: @COMP_ENGINE@;
     value "max_unmapped_time" int: 36000;
     value "min_unmapped_time" int: 300;
@@ -247,6 +248,7 @@ group "Comp_Config" struct {
     value "hwc" uchar: 1;
     value "hwc_use_multi_plane" uchar: 1;
     value "hwc_sync_mode_change" uchar: 1;
+    value "hwc_use_detach" uchar: 1;
     value "hwc_deactive" uchar: 0;
     value "hwc_optimized" uchar: 0;
     value "hwc_optimized_2" uchar: 1;
