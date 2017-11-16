@@ -121,6 +121,8 @@ group "E_Config" struct {
   value "keyboard.repeat_delay" int: 400;
   value "keyboard.repeat_rate" int: 25;
   value "use_desktop_window_profile" int: 0;
+  value "use_desk_smart_obj" int: 1;
+  value "screen_rotation_pre" int: 270;
   value "wm_win_rotation" uchar: 1;
   value "eom_enable" uchar: 1;
   value "use_cursor_timer" int: 0;
