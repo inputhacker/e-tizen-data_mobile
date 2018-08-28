@@ -24,7 +24,6 @@ Requires:      e-mod-tizen-processmgr
 Requires:      e-mod-tizen-effect
 Requires:      e-mod-tizen-screen-reader
 Requires:      e-mod-tizen-gesture
-Requires:      e-tizen-testcase
 Requires:      xkeyboard-config
 
 %{!?TZ_SYS_RO_SHARE: %global TZ_SYS_RO_SHARE /usr/share}
