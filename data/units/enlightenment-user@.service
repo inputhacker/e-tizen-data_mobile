@@ -1,0 +1,14 @@
+[Unit]
+PartOf=userlogin@%i.target
+Description=Creating a link file for user to access wayland-0
+DefaultDependencies=no
+Before=starter@%i.service
+
+[Service]
+User=%i
+Environment=DBUS_SESSION_BUS_ADDRESS=kernel:path=/sys/fs/kdbus/%i-user/bus;unix:path=/run/user/%i/bus
+Environment=XDG_RUNTIME_DIR=/run/user/%i
+SmackProcessLabel=User
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/sh -c "while [ ! -e /run/wayland-0 ] ; do /usr/bin/sleep .1 ; done ;/usr/bin/ln -s /run/wayland-0 /run/user/%i/"

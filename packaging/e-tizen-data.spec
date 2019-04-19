@@ -78,6 +78,9 @@ install -m 644 data/units/display-manager-monitor.service %{buildroot}%{_unitdir
 %__mkdir_p %{buildroot}%{_unitdir_user}
 install -m 644 data/units/enlightenment-user.service %{buildroot}%{_unitdir_user}
 
+%__mkdir_p %{buildroot}%{_unitdir}
+install -m 644 data/units/enlightenment-user@.service %{buildroot}%{_unitdir}
+
 # install env file for service
 %__mkdir_p %{buildroot}%{_sysconfdir}/sysconfig
 install -m 0644 data/units/enlightenment %{buildroot}%{_sysconfdir}/sysconfig
@@ -101,12 +104,16 @@ ln -sf ../display-manager-monitor.service %{_unitdir}/graphical.target.wants/dis
 %__mkdir_p %{_unitdir_user}/basic.target.wants
 ln -sf ../enlightenment-user.service %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 
+%__mkdir_p %{_unitdir}/user-basic@.target.wants
+ln -sf ../enlightenment-user@.service %{_unitdir}/user-basic@.target.wants/enlightenment-user@.service
+
 rm -rf %{_localstatedir}/lib/enlightenment
 
 %postun
 rm -f %{_unitdir}/graphical.target.wants/display-manager.service
 rm -f %{_unitdir}/graphical.target.wants/display-manager-monitor.service
 rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
+rm -f %{_unitdir}/user-basic@.target.wants/enlightenment-user@.service
 
 %files
 %manifest %{alias}.manifest
@@ -121,6 +128,7 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %{_unitdir}/display-manager.service
 %{_unitdir}/display-manager-monitor.service
 %{_unitdir_user}/enlightenment-user.service
+%{_unitdir}/enlightenment-user@.service
 %config %{_sysconfdir}/sysconfig/enlightenment
 %config %{_sysconfdir}/profile.d/enlightenment.sh
 %config %{TZ_SYS_RO_SHARE}/tdm/tdm.ini
