@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
 #Remove directories and files installed from the old version of platform
 rm -rf /var/xkb
 rm -rf /var/log/Xorg*.log*
